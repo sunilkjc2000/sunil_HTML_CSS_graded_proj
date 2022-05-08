@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Show Hide Dropdown Using CSS</title>
+<link rel="stylesheet" href="pharmacy_home.css">
+</head>
+<body>
+    <header>
+        <h1>Pharmacy</h1>
+    </header>
+    
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Our Medicines</a>
+            <ul class="dropdown">
+                <li><a href="#">Fever</a></li>
+                <li><a href="#">Muscle Pain</a></li>
+                <li><a href="#">Cold and Cough</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">Health Care ▾</a>
+            <ul class="dropdown">
+                <li><a href="#">Baby Care</a></li>
+                <li><a href="#">Skin care</a></li>
+                <li><a href="#">Home care</a></li>
+                <li><a href="personal_care.html">Personal care</a></li>
+                <li><a href="#">Pet care</a></li>
+            </ul>
+        </li>
+        <li><a href="labtest.html">Lab Test</a></li>
+    </ul>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <img src="./Images/Animation/ani1.jpg" style="width:100%">
+  
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <img src="./Images/Animation/ani3.jpg" style="width:100%">
+</div>
+
+<div class="mySlides fade">
+    <div class="numbertext"></div>
+    <img src="./Images/Animation/ani4.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext"></div>
+    <img src="./Images/Animation/ani5.jpg" style="width:100%">
+  </div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+
+    <footer>
+        <p>@copyright. Only for demonstration purposes</p>
+    </footer>
+</body>
+</html>
+
+
